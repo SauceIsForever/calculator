@@ -1,6 +1,17 @@
+body, html {
+  height: 100vh;
+  margin: 0;
+}
+
+.calc-wrap{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .calcbody{
     width: 30rem;
-    height: 43rem;
+    height: 47rem;
     background-color: black;
     border-radius: 10px;
 }
@@ -19,6 +30,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     padding-bottom: 30px;
+    
 
 }
 
@@ -92,4 +104,10 @@
     width: 100px;
     text-align: center;
 }
- 
+
+.rounded-button:hover,
+.pill-button.grey:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    transition: filter 0.2s, box-shadow 0.2s;
+}
