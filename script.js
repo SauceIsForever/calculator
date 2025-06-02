@@ -1,43 +1,43 @@
-const grey = document.querySelectorAll(".grey");
+const buttons = document.querySelectorAll(".rounded-button");
 const display = document.getElementById("display");
 const clear_button = document.getElementById("clear-button");
+const equals_button = document.getElementById("equals-button");
 
-grey.forEach(button => {
-    button.addEventListener('click', () => { 
-        console.log(button.textContent);
-        appendNumber(button.textContent);
-    });
-});
+//buttons.forEach(button => {
+    //button.addEventListener('click', () => { 
+        //console.log(button.textContent);
+        //appendNumber(button.textContent);
+    //});
+//});
+
+function addToDisplay(input){
+    display.value += input;
+}
 
 function AC_clear() {
-    display.textContent = '0';
+    display.value = '0';
 }
+
 
 clear_button.addEventListener('click', () => {
     AC_clear();
 });
 
-function appendNumber(p) {
+function appendNumber(input) {
     let currentValue = display.textContent;
     if (currentValue === '0') {
-        display.textContent = p;
+        display.textContent = input;
     } else {
-        display.textContent += p;
+        display.textContent += input;
     }
 }
 
-function add(a, b) {
-    return a + b;
-}
 
-function subtract(a, b) {
-    return a - b;
-}
-
-function multiply(a , b) {
-    return a * b;
-}
-
-function divide(a, b) {
-    return a / b;
+function calculate(){
+    try{
+        display.textContent = eval(display.textContent);
+    }
+    catch(error){
+        display.textContent = "Error";
+    }
 }
