@@ -4,12 +4,6 @@ const clear_button = document.getElementById("clear-button");
 const equals_button = document.getElementById("equals-button");
 let inputValue = display.value;
 
-//buttons.forEach(button => {
-    //button.addEventListener('click', () => { 
-        //console.log(button.textContent);
-        //appendNumber(button.textContent);
-    //});
-//});
 
 function addToDisplay(input){
     display.value += input;
@@ -30,5 +24,10 @@ clear_button.addEventListener('click', () => {
 
 
 function calculate(){
-    display.value = eval(display.value);
-}
+    try{
+        display.value = eval(display.value);
+    }
+    catch(error){
+        display.value = "Error";
+    }
+}  
