@@ -2,6 +2,7 @@ const buttons = document.querySelectorAll(".rounded-button");
 const display = document.getElementById("display");
 const clear_button = document.getElementById("clear-button");
 const equals_button = document.getElementById("equals-button");
+let inputValue = display.value;
 
 //buttons.forEach(button => {
     //button.addEventListener('click', () => { 
@@ -15,7 +16,11 @@ function addToDisplay(input){
 }
 
 function AC_clear() {
-    display.value = '0';
+    display.value = '';
+}
+
+function DEL(){
+    display.value = display.value.substring(0, display.value.length - 1);
 }
 
 
@@ -23,21 +28,7 @@ clear_button.addEventListener('click', () => {
     AC_clear();
 });
 
-function appendNumber(input) {
-    let currentValue = display.textContent;
-    if (currentValue === '0') {
-        display.textContent = input;
-    } else {
-        display.textContent += input;
-    }
-}
-
 
 function calculate(){
-    try{
-        display.textContent = eval(display.textContent);
-    }
-    catch(error){
-        display.textContent = "Error";
-    }
+    display.value = eval(display.value);
 }

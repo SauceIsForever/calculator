@@ -79,7 +79,7 @@ body, html {
     border-radius: 50%;
     border-style: hidden;
     font-family: 'Roboto', sans-serif;
-    font-size: larger;
+    font-size: 23px;
 }
 
 .rounded-button.orange{
@@ -101,6 +101,11 @@ body, html {
     border: none;
     height: 80px;
 }
+
+.pill-button {
+    font-size: 23px;
+}
+
 
 .functions p{
     font-size: 50px;
